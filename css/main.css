@@ -1383,7 +1383,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #a7ff93;
+  background: #081726;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2789,4 +2789,74 @@ header.header {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+.video-frame {
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  margin: 1.25rem auto;
+  overflow: hidden;
+  position: relative;
+}
+.video-frame iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+.video-frame--portrait iframe {
+  min-height: 100%;
+  min-width: 100%;
+}
+.video-frame--portrait {
+  aspect-ratio: 9/16;
+  max-width: 100%;
+  width: 190px;
+}
+.video-frame--landscape {
+  aspect-ratio: 16/9;
+  margin: 0;
+  width: 100%;
+}
+.thesis-video-grid {
+  align-items: start;
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.5rem 0 2rem;
+}
+.thesis-video-card {
+  border: 1px solid rgba(128,128,128,0.25);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.thesis-video-card h4 {
+  margin: 0 0 0.75rem;
+}
+.thesis-video-card p {
+  font-size: 0.92em;
+  margin: 0.8rem 0 0;
+}
+.thesis-video-card--portrait .video-frame {
+  margin-left: auto;
+  margin-right: auto;
+}
+.video-placeholder {
+  align-items: center;
+  background: linear-gradient(135deg, #19242f, #263d4d);
+  color: #d7e7ef;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .thesis-video-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-frame--portrait {
+    max-width: 240px;
+    width: 72vw;
+  }
 }
